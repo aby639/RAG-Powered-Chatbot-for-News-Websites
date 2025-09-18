@@ -273,5 +273,3 @@ Thumbs.db
 ```
 
 ---
-
-want me to also drop a super-short “quickstart” at the very top? happy to add it.
