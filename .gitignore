@@ -1,0 +1,34 @@
+# --- secrets ---
+**/.env
+**/.env.local
+**/.env.*.local
+
+# --- node ---
+node_modules/
+dist/
+build/
+.next/
+.eslintcache
+*.tsbuildinfo
+
+# --- logs ---
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# --- editor/OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- cache/coverage ---
+.cache/
+coverage/
+
+# --- python (ingest) ---
+**/__pycache__/
+.venv/
+.envrc
