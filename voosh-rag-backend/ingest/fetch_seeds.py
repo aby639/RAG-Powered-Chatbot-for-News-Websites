@@ -1,5 +1,4 @@
 # fetch_seeds.py  -> collects article URLs from multiple RSS feeds (BBC + Reuters),
-# writes them to seed_urls.txt so your ingest never shows "urls: 0"
 
 import requests
 from bs4 import BeautifulSoup
