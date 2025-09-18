@@ -13,7 +13,7 @@ const ORIGIN = process.env.ORIGIN || '*'
 const COLLECTION_NAME = process.env.COLLECTION_NAME || 'news'
 const TOP_K = parseInt(process.env.TOP_K || '5', 10)
 
-// LLM reliability knobs (retry only — still strict RAG)
+// LLM reliability knobs 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY
 const GEMINI_MODEL  = process.env.GEMINI_MODEL  || 'gemini-1.5-flash-latest'
 const LLM_RETRIES   = parseInt(process.env.LLM_RETRIES  || '3', 10)
@@ -128,7 +128,7 @@ async function qdrantCount() {
   return data?.result?.count ?? 0
 }
 
-/* ---------------- Gemini (retry only) ---------------- */
+/* ---------------- Gemini ---------------- */
 async function askGeminiRaw(prompt) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`
   const body = { contents: [{ role: 'user', parts: [{ text: prompt }] }] }
@@ -235,7 +235,7 @@ app.post('/api/chat', async (req, res) => {
 
     await pushMsg(sessionId, 'user', message)
 
-    // STRICT RAG: always retrieve → prompt with ONLY context
+    //RAG: always retrieve → prompt with ONLY context
     const passages = await qdrantSearch(message, TOP_K)
     const prompt = buildPrompt(message, passages)
 
