@@ -84,7 +84,6 @@ TOP_K=5
 Upstash Redis REST (optional)
 
 UPSTASH_REDIS_REST_URL=https://us1-cool.upstash.io
- # No trailing slash
 UPSTASH_REDIS_REST_TOKEN=<redis_rest_token>
 
 
@@ -94,8 +93,6 @@ Point the UI to the API base
 
 VITE_API_URL=https://voosh-rag-backend-m0qa.onrender.com
 
-
-> **No trailing slash** means: `https://api.example.com` ✔️ **not** `https://api.example.com/` ❌
 
 ---
 
