@@ -44,6 +44,8 @@ voosh-rag-backend/
 ├─ .env # (not committed)
 ├─ .env.example # sample env (commit safe)
 └─ package.json
+
+
 voosh-rag-frontend/
 ├─ src/App.jsx
 ├─ src/styles/app.scss
